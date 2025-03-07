@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GALLERY</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="gallery.css" />
+    <script src="gallery.js"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="logo (2).png" class="logo" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="artists.html">Artists</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-container">
+      <h2>Discover</h2>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for art or artist..."
+          oninput="searchGallery()"
+        />
+        <span class="search-icon">&#128269;</span>
+      </div>
+    </div>
+
+    <section class="gallery-container" id="gallery">
+      <!-- Existing images (4) -->
+
+      <!-- Full-Screen Modal for Images -->
+      <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" />
+        <div id="modalCaption"></div>
+      </div>
+      <div class="card" data-name="Girl with a Pearl Earring">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/salva1.jpg"
+              alt="Girl with a Pearl Earring"
+              onclick="openModal('images/art5.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>Girl with a Pearl Earring</h3>
+            <p>Artist: Johannes Vermeer</p>
+            <p>
+              One of the most famous Dutch Baroque paintings, showcasing a girl
+              wearing an exotic dress .
+            </p>
+            <a href="images/art5.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Birth of Venus">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/salva4.jpg"
+              alt="The Birth of Venus"
+              onclick="openModal('images/art6.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Birth of Venus</h3>
+            <p>Artist: Sandro Botticelli</p>
+            <p>
+              A famous mythological painting representing the birth of Venus
+              from the sea, symbolizing beauty and love.
+            </p>
+            <a href="images/art6.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="The Persistence of Memory">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art3.jpg"
+              alt="The Persistence of Memory"
+              onclick="openModal('images/art3.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Persistence of Memory</h3>
+            <p>Artist: Salvador Dalí</p>
+            <p>
+              This surrealistic piece showcases melting clocks draped over tree
+              branches, symbolizing the relativity of time.
+            </p>
+            <a href="images/art3.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Scream">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art4.jpg"
+              alt="The Scream"
+              onclick="openModal('images/art4.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Scream</h3>
+            <p>Artist: Edvard Munch</p>
+
+            <p>
+              This expressionist painting is known for its depiction of
+              existential dread and the agony of the human condition.
+            </p>
+            <a href="images/art4.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="Guernica">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art8.jpg"
+              alt="Guernica"
+              onclick="openModal('images/art8.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>Guernica</h3>
+            <p>Artist: Pablo Picasso</p>
+            <p>
+              A powerful anti-war painting showing the suffering caused by the
+              bombing of the Spanish town of Guernica during the Spanish Civil
+              War.
+            </p>
+            <a href="images/art8.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- New images (36 more) -->
+      <div class="card" data-name="The Starry Night">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art2.jpg"
+              alt="The Starry Night"
+              onclick="openModal('images/art2.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Starry Night</h3>
+            <p>Artist: Vincent van Gogh</p>
+            <p>
+              This masterpiece portrays a dreamy night sky filled with swirling
+              clouds, stars, and a crescent moon, painted with expressive brush
+              strokes.
+            </p>
+            <a href="images/art2.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="Mona Lisa">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art1.jpg"
+              alt="Mona Lisa"
+              onclick="openModal('images/art1.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>Mona Lisa</h3>
+            <p>Artist: Leonardo da Vinci</p>
+            <p>
+              This is one of the most famous and widely recognized artworks in
+              the world, renowned for its mysterious smile and subtle details.
+            </p>
+            <a href="images/art1.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="The Last Supper">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art7.jpg"
+              alt="The Last Supper"
+              onclick="openModal('images/art7.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Last Supper</h3>
+            <p>Artist: Leonardo da Vinci</p>
+            <p>
+              This iconic painting depicts the final meal of Jesus Christ with
+              his disciples, known for its symmetry and use of perspective.
+            </p>
+            <a href="images/art7.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="American Gothic">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art18.jpg"
+              alt="American Gothic"
+              onclick="openModal('images/art39.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>American Gothic</h3>
+            <p>Artist: Grant Wood</p>
+            <p>
+              This iconic depiction of a farmer and his daughter is known for
+              its symbolism of rural American values and its use of Gothic
+              architecture
+            </p>
+            <a href="images/art18.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Kiss">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/edward3.jpg"
+              alt="The Kiss"
+              onclick="openModal('images/art9.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Kiss</h3>
+            <p>Artist: Gustav Klimt</p>
+            <p>
+              A symbol of love and passion, this painting portrays a couple
+              embracing in an ornate golden background.
+            </p>
+            <a href="images/art9.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="Nighthawks">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/keith1.jpg"
+              alt="Nighthawks"
+              onclick="openModal('images/art11.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>Nighthawks</h3>
+            <p>Artist: Edward Hopper</p>
+            <p>
+              Famous for its portrayal of urban isolation, this piece shows a
+              lonely diner at night, under stark lighting.
+            </p>
+            <a href="images/keith1.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Garden of Earthly Delights">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art12.jpg"
+              alt="The Garden of Earthly Delights"
+              onclick="openModal('images/art12.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Garden of Earthly Delights</h3>
+            <p>Artist: Hieronymus Bosch</p>
+            <p>
+              A triptych known for its complex, surreal imagery depicting
+              paradise, earthly pleasures, and hell.
+            </p>
+            <a href="images/art12.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="Water Lilies">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art13.jpg"
+              alt="Water Lilies"
+              onclick="openModal('images/art13.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>Water Lilies</h3>
+            <p>Artist: Claude Monet</p>
+            <p>
+              A series of paintings depicting Monet's flower garden in Giverny,
+              with the focus on water lilies and reflections in the water.
+            </p>
+            <a href="images/art13.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Birth of Venus">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art14.jpg"
+              alt="The Birth of Venus"
+              onclick="openModal('images/art14.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Birth of Venus</h3>
+            <p>Artist: Sandro Botticelli</p>
+            <p>
+              This mythological scene captures the birth of Venus from the sea,
+              representing the ideals of beauty and love in Renaissance art.
+            </p>
+            <a href="images/art14.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Add 22 more images following the same structure with appropriate descriptions -->
+
+      <div class="card" data-name="The Creation of Adam">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art15.jpg"
+              alt="The Creation of Adam"
+              onclick="openModal('images/art36.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Creation of Adam</h3>
+            <p>Artist: Michelangelo</p>
+            <p>
+              This iconic fresco from the Sistine Chapel illustrates the
+              Biblical moment when God gives life to Adam with a single touch.
+            </p>
+            <a href="images/art15.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="The School of Athens">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art16.jpg"
+              alt="The School of Athens"
+              onclick="openModal('images/art37.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The School of Athens</h3>
+            <p>Artist: Raphael</p>
+            <p>
+              This fresco represents the great philosophers of antiquity, with
+              Plato and Aristotle at the center, symbolizing the unity of
+              philosophy.
+            </p>
+            <a href="images/art16.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="Las Meninas">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art17.jpg"
+              alt="Las Meninas"
+              onclick="openModal('images/art38.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>Las Meninas</h3>
+            <p>Artist: Diego Velázquez</p>
+            <p>
+              A complex and enigmatic painting of the Spanish royal family,
+              famous for its innovative use of perspective and the presence of
+              the artist.
+            </p>
+            <a href="images/art17.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Night Watch">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/jean4.jpg"
+              alt="The Night Watch"
+              onclick="openModal('images/art10.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Night Watch</h3>
+            <p>Artist: Rembrandt van Rijn</p>
+            <p>
+              One of Rembrandt's most famous works, it depicts a group of
+              citizens of Amsterdam in motion
+            </p>
+            <a href="images/art10.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Arnolfini Portrait">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art19.jpg"
+              alt="The Arnolfini Portrait"
+              onclick="openModal('images/art40.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Arnolfini Portrait</h3>
+            <p>Artist: Jan van Eyck</p>
+            <p>
+              This work is celebrated for its detailed realism and symbolic
+              elements, depicting a wealthy couple in a moment of solemn marital
+              agreement.
+            </p>
+            <a href="images/art19.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Hay Wain">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="images/art20.jpg"
+              alt="The Hay Wain"
+              onclick="openModal('images/art41.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Hay Wain</h3>
+            <p>Artist: John Constable</p>
+            <p>
+              Famous for its depiction of rural England, this painting shows a
+              cart, or "wain," pulling a hayload through a river against a lush
+            </p>
+            <a href="images/art20.jpg" download class="download-btn"
+              >Download</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="card" data-name="The Fighting Temeraire">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="art21.jpg"
+              alt="The Fighting Temeraire"
+              onclick="openModal('art42.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Fighting Temeraire</h3>
+            <p>Artist: J.M.W. Turner</p>
+            <p>
+              This painting portrays the final journey of the once-proud
+              warship, symbolizing the end of the British naval era
+            </p>
+            <a href="art21.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Death of Sardanapalus">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="art22.jpg"
+              alt="The Death of Sardanapalus"
+              onclick="openModal('art43.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Death of Sardanapalus</h3>
+            <p>Artist: Eugène Delacroix</p>
+            <p>
+              This dramatic and romantic painting depicts the death of the
+              Assyrian king Sardanapalus, surrounded by destruction and chaos .
+            </p>
+            <a href="art22.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Night Cafe">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="art23.jpg"
+              alt="The Night Cafe"
+              onclick="openModal('art44.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Night Cafe</h3>
+            <p>Artist: Vincent van Gogh</p>
+            <p>
+              This painting depicts a dimly lit café, using bold color contrasts
+              to convey a sense of loneliness and unease in the viewer.
+            </p>
+            <a href="art23.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="Liberty Leading the People">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="art24.jpg"
+              alt="Liberty Leading the People"
+              onclick="openModal('art45.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>Liberty Leading the People</h3>
+            <p>Artist: Eugène Delacroix</p>
+            <p>
+              This painting represents the July Revolution in France of 1830,
+              personifying Liberty as a strong and defiant figure.
+            </p>
+            <a href="art24.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Lady of Shalott">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="art25.jpg"
+              alt="The Lady of Shalott"
+              onclick="openModal('art46.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Lady of Shalott</h3>
+            <p>Artist: John William Waterhouse</p>
+            <p>
+              This painting is inspired by the poem by Alfred, Lord Tennyson,
+              and depicts a tragic woman confined to a tower.
+            </p>
+            <a href="art25.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Death of Cleopatra">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="art26.jpg"
+              alt="The Death of Cleopatra"
+              onclick="openModal('art47.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Death of Cleopatra</h3>
+            <p>Artist: Jean-André Rixens</p>
+            <p>
+              This dramatic and tragic painting depicts Cleopatra's final
+              moments after the death of her lover.
+            </p>
+            <a href="art26.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Kiss of Judas">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="art27.jpg"
+              alt="The Kiss of Judas"
+              onclick="openModal('art48.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Kiss of Judas</h3>
+            <p>Artist: Giampietrino</p>
+            <p>
+              This artwork represents the biblical moment of betrayal, where
+              Judas kisses Christ to identify Him for the Roman
+            </p>
+            <a href="art28.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="Whistler's Mother">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="art29.jpg"
+              alt="Whistler's Mother"
+              onclick="openModal('art49.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>Whistler's Mother</h3>
+            <p>Artist: James McNeill Whistler</p>
+            <p>
+              This is a portrayal of the artist's mother, Anna Whistler, seated
+              in profile and wearing a simple black dress
+            </p>
+            <a href="art29.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Great Wave off Kanagawa">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="art30.jpg"
+              alt="The Great Wave off Kanagawa"
+              onclick="openModal('art50.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Great Wave off Kanagawa</h3>
+            <p>Artist: Katsushika Hokusai</p>
+            <p>
+              One of the most iconic Japanese woodblock prints, this piece shows
+              a giant wave threatening boats
+            </p>
+            <a href="art3o.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" data-name="The Tower of Babel">
+        <div class="card-inner">
+          <div class="card-front">
+            <img
+              src="art31.jpg"
+              alt="The Tower of Babel"
+              onclick="openModal('art51.jpg')"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-back">
+            <h3>The Tower of Babel</h3>
+            <p>Artist: Pieter Bruegel the Elder</p>
+            <p>
+              This painting depicts the biblical story of the Tower of Babel
+            </p>
+            <a href="art32.jpg" download class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="modal" class="modal">
+      <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+      <span class="next" onclick="changeImage(1)">&#10095;</span>
+      <div class="modal-content">
+        <img id="modalImage" src="" alt="Artwork" />
+      </div>
+    </div>
+
+    <footer>
+      <div style="max-width: 1200px; margin: 0 auto">
+        <div
+          style="display: flex; flex-wrap: wrap; justify-content: space-between"
+        >
+          <div style="flex: 1 1 300px; margin: 10px">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home »</a></li>
+              <li><a href="artists.html#">For Artists »</a></li>
+              <li><a href="gallery.html">For Art Lovers »</a></li>
+
+              <li><a href="about.html">Learn More »</a></li>
+            </ul>
+          </div>
+          <div style="flex: 1 1 300px; margin: 10px">
+            <h4>Legal</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://www.termsfeed.com/live/0e1eee9e-ad47-44b2-8d3a-0f59d920b71f"
+                  >Privacy Policy Terms & Conditions »</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div style="flex: 1 1 300px; margin: 10px">
+            <h4 style="color: #fbfcfd">Contact Us</h4>
+            <p>
+              <a href="mailto:your-email@example.com" style="color: #ffcb05"
+                >Email »</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/your-profile"
+                style="color: #ffcb05"
+                target="_blank"
+                >People at LinkedIn »</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Social Media Links with Font Awesome icons -->
+        <div style="text-align: center; margin-top: 20px">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            style="
+              margin: 0 10px;
+              color: #fff;
+              font-size: 24px;
+              transition: transform 0.3s ease;
+            "
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            style="
+              margin: 0 10px;
+              color: #fff;
+              font-size: 24px;
+              transition: transform 0.3s ease;
+            "
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            style="
+              margin: 0 10px;
+              color: #fff;
+              font-size: 24px;
+              transition: transform 0.3s ease;
+            "
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+
+        <!-- Copyright Information -->
+        <div style="text-align: center; margin-top: 20px">
+          <p>&copy; 2025 Virtual Art Gallery. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      /* Hover effect on the social media icons */
+      footer a:hover i {
+        transform: scale(1.2); /* Increase size on hover */
+      }
+    </style>
+  </body>
+</html>

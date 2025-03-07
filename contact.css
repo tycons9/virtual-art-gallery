@@ -1,0 +1,208 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("image/background.png"); /* Replace with your background image file */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #fbfcfd;
+  padding-top: 80px; /* Account for fixed navbar */
+}
+
+/* Navbar */
+.navbar {
+  width: 85%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.logo {
+  width: 200px;
+  cursor: pointer;
+}
+
+.navbar nav a {
+  margin: 0 15px;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #ffcb05;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: slideIn 1s ease-out;
+}
+
+/* Contact Form and Info Container */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reduced gap to bring the cards closer */
+  margin-top: 30px;
+  flex-wrap: wrap; /* Ensure responsive layout */
+}
+
+/* Contact Form */
+.contact-form {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px; /* Reduced padding */
+  max-width: 350px; /* Smaller width */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px; /* Reduced padding */
+  margin: 8px 0; /* Smaller gap */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px; /* Slightly smaller font */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+.contact-form button {
+  background-color: #ffcb05;
+  color: #000;
+  padding: 10px 20px; /* Reduced button size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* Smaller font size */
+  transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e6a900;
+  transform: scale(1.05);
+}
+
+.contact-form .char-counter {
+  text-align: right;
+  font-size: 12px; /* Smaller font size */
+  color: #ccc;
+}
+
+/* Contact Info Card */
+.contact-info-card {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px; /* Reduced padding */
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  flex: 1;
+  max-width: 350px; /* Smaller size */
+  color: #fff;
+  margin-top: 0; /* No extra space */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-card h3 {
+  margin-bottom: 10px; /* Reduced gap */
+  font-size: 18px; /* Smaller font */
+}
+
+.contact-info-card p {
+  font-size: 14px; /* Smaller font */
+  margin-bottom: 8px; /* Reduced gap */
+}
+
+.contact-info-card a {
+  color: #ffcb05;
+  text-decoration: none;
+}
+
+.contact-info-card a:hover {
+  text-decoration: underline;
+}
+
+.location iframe {
+  width: 100%;
+  height: 250px; /* Smaller map */
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Social Media */
+.social-media a {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 24px; /* Smaller icons */
+  transition: transform 0.3s ease;
+}
+
+.social-media a:hover {
+  transform: scale(1.3);
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin: 5px 0;
+}
+
+footer ul li a {
+  color: #ffcb05;
+  margin: 0 5px;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin: 5px 0;
+}

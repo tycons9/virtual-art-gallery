@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("image/background.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  overflow-x: hidden;
+  color: #fbfcfd;
+  padding-top: 80px;
+}
+
+.navbar {
+  width: 85%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.logo {
+  width: 200px;
+  cursor: pointer;
+}
+
+.navbar nav a {
+  margin: 0 15px;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+.navbar nav a:hover {
+  color: #ffcb05;
+}
+.content {
+  width: 85%;
+  margin: 30px auto 0;
+}
+
+.heading {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.heading h1 {
+  font-size: 50px;
+  color: #fbfcfd;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.heading h1::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  display: block;
+}
+
+.heading p {
+  font-size: 18px;
+  color: #fbfcfd;
+  margin-bottom: 35px;
+}
+
+.section {
+  margin: 40px 0;
+}
+
+.section h2 {
+  font-size: 28px;
+  color: #fbfcfd;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fbfcfd;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 1;
+  margin-right: 40px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  margin-bottom: 15px;
+  display: block;
+  transition: 0.5s ease;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h2 {
+  font-size: 23px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.about-content .read-more {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange;
+  color: #fff;
+  font-size: 19px;
+  text-decoration: none;
+  border-radius: 25px;
+  margin-top: 15px;
+  transition: 0.3s ease;
+}
+
+.team {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: center;
+  margin: 3px;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-member h4 {
+  font-size: 20px;
+  color: #fff;
+}
+
+.team-member p {
+  font-size: 16px;
+  color: #ffcb05;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin: 5px 0;
+}
+
+footer ul li a {
+  color: #ffcb05;
+  margin: 0 5px;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .content {
+    width: 90%;
+  }
+
+  .heading h1 {
+    font-size: 36px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member {
+    margin: 15px 0;
+  }
+
+  .team-member img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading h1 {
+    font-size: 28px;
+  }
+
+  .heading p {
+    font-size: 16px;
+  }
+
+  .section h2 {
+    font-size: 22px;
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
+
+  .about-content h2 {
+    font-size: 20px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+
+  .team-member h4 {
+    font-size: 18px;
+  }
+
+  .team-member p {
+    font-size: 14px;
+  }
+
+  footer h4 {
+    font-size: 16px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+}
+.team-member p {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ffcb05;
+  color: #110f08;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}

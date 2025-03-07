@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <img src="logo (2).png" class="logo" />
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="artists.html">Artists</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="content">
+      <div class="heading">
+        <h1>Contact Us</h1>
+      </div>
+
+      <div class="contact-container">
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h2>Get In Touch</h2>
+          <form id="contactForm">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+              required
+            />
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              rows="5"
+              maxlength="500"
+              required
+            ></textarea>
+            <div class="char-counter" id="charCounter">0/500</div>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="contact-info-card">
+          <h3>Our Gallery Location</h3>
+          <p>Dire Dawa, Ethiopia</p>
+          <p>Phone: +251-912345678</p>
+          <p>
+            Email:
+            <a href="mailto:contact@virtualartgallery.com"
+              >contact@virtualartgallery.com</a
+            >
+          </p>
+          <div class="location">
+            <iframe
+              src="https://www.google.com/maps/embed"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="social-media" style="text-align: center; margin-top: 20px">
+      <h2 style="color: orange">Follow Us on Our Social Media</h2>
+      <a href="https://www.facebook.com" target="_blank"
+        ><i class="fab fa-facebook"></i
+      ></a>
+      <a href="https://www.instagram.com" target="_blank"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="https://www.twitter.com" target="_blank"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a href="https://www.linkedin.com" target="_blank"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+    </div>
+    <footer>
+      <div style="max-width: 1200px; margin: 0 auto">
+        <div
+          style="display: flex; flex-wrap: wrap; justify-content: space-between"
+        >
+          <div style="flex: 1 1 300px; margin: 10px">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home »</a></li>
+              <li><a href="artists.html#">For Artists »</a></li>
+              <li><a href="gallery.html">For Art Lovers »</a></li>
+
+              <li><a href="about.html">Learn More »</a></li>
+            </ul>
+          </div>
+          <div style="flex: 1 1 300px; margin: 10px">
+            <h4>Legal</h4>
+            <ul>
+              <li>
+                <a
+                  href="https://www.termsfeed.com/live/0e1eee9e-ad47-44b2-8d3a-0f59d920b71f"
+                  >Privacy Policy Terms & Conditions »</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div style="flex: 1 1 300px; margin: 10px">
+            <h4 style="color: #fbfcfd">Contact Us</h4>
+            <p>
+              <a href="mailto:your-email@example.com" style="color: #ffcb05"
+                >Email »</a
+              >
+            </p>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/your-profile"
+                style="color: #ffcb05"
+                target="_blank"
+                >People at LinkedIn »</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Social Media Links with Font Awesome icons -->
+        <div style="text-align: center; margin-top: 20px">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            style="
+              margin: 0 10px;
+              color: #fff;
+              font-size: 24px;
+              transition: transform 0.3s ease;
+            "
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            style="
+              margin: 0 10px;
+              color: #fff;
+              font-size: 24px;
+              transition: transform 0.3s ease;
+            "
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            style="
+              margin: 0 10px;
+              color: #fff;
+              font-size: 24px;
+              transition: transform 0.3s ease;
+            "
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+
+        <!-- Copyright Information -->
+        <div style="text-align: center; margin-top: 20px">
+          <p>&copy; 2025 Virtual Art Gallery. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

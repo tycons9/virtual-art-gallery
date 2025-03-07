@@ -1,0 +1,378 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* Body with background image */
+body {
+  background-image: url("image/background.png"); /* Replace with your background image file */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  color: #fbfcfd;
+  padding-top: 80px; /* Adjusted padding to account for fixed navbar */
+}
+
+/* Navbar */
+.navbar {
+  width: 85%;
+  height: 60px; /* Adjusted height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  padding: 0 20px; /* Adjusted padding */
+  position: fixed; /* Make navbar fixed */
+  top: 0; /* Stick to the top of the page */
+  left: 0;
+  z-index: 10; /* Ensure navbar stays above the bubbles */
+}
+
+.logo {
+  width: 200px; /* Logo size */
+  cursor: pointer;
+}
+
+.navbar nav a {
+  margin: 0 15px;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #ffcb05;
+}
+
+/* Search Section */
+.search-container {
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px;
+  max-width: 400px;
+}
+
+.search-container h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.search-bar {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* Add padding for the search icon */
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid #4e8c8c;
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Positioned on the right */
+  transform: translateY(-50%);
+  color: #4e8c8c;
+  font-size: 20px;
+  cursor: pointer; /* Make the icon clickable */
+}
+
+/* Gallery Cards */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ensure there's space between items */
+  padding: 30px;
+}
+
+.card {
+  width: 23%; /* Decrease card width to make them smaller */
+  margin-bottom: 20px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+.card-front img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  cursor: pointer; /* Make the image clickable */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-front img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.card-back {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  transform: rotateY(180deg);
+  border-radius: 15px;
+}
+
+.card-back h3 {
+  margin-top: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.modal img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer h4 {
+  margin-bottom: 10px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin: 5px 0;
+}
+
+footer ul li a {
+  color: #ffcb05;
+  margin: 0 5px;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin: 5px 0;
+}
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+/* Style for the Modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scrolling if needed */
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with transparency */
+}
+
+/* Modal content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Caption under the image */
+#modalCaption {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+h3 {
+  color: #ffcb05;
+}
+@media (max-width: 768px) {
+  .content {
+    width: 90%;
+  }
+
+  .heading h1 {
+    font-size: 36px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member {
+    margin: 15px 0;
+  }
+
+  .team-member img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading h1 {
+    font-size: 28px;
+  }
+
+  .heading p {
+    font-size: 16px;
+  }
+
+  .section h2 {
+    font-size: 22px;
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
+
+  .about-content h2 {
+    font-size: 20px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+
+  .team-member h4 {
+    font-size: 18px;
+  }
+
+  .team-member p {
+    font-size: 14px;
+  }
+
+  footer h4 {
+    font-size: 16px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+}
