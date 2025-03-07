@@ -24,5 +24,5 @@ Contact
 If you’d like to get in touch with us or learn more about the gallery, feel free to contact us via the following methods:
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Email: eyobasefa623@gmail.com
-Thank you for visiting the Virtual Art Gallery! We hope you enjoy the experience.
+Thank you for visiting the Virtual Art Gallery! I hope you enjoy the experience.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
