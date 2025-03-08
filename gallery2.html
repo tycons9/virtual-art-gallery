@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Art Gallery</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        /* Body with background image */
+        body {
+            background-image: url('background.png'); /* Replace with your background image file */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            color: #fbfcfd;
+        }
+
+        /* Navbar */
+        .navbar {
+            width: 85%;
+            height: 60px; /* Adjusted height */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: auto;
+            padding: 0 20px; /* Adjusted padding */
+            position: fixed; /* Make navbar fixed */
+            top: 0; /* Stick to the top of the page */
+            left: 0;
+            z-index: 10; /* Ensure navbar stays above the bubbles */
+        }
+        .logo {
+            width: 200px; /* Logo size */
+            cursor: pointer;
+        }
+
+        .navbar nav a {
+            margin: 0 15px;
+            color: #fff;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+
+        .navbar nav a:hover {
+            color: #ffcb05;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            height: 80vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 60px; /* Space for navbar */
+        }
+        .hero .content {
+            z-index: 2;
+            text-align: left; 
+        }
+
+        .hero small {
+            text-align: left;
+            font-size: 18px;
+            color: #ddd;
+        }
+
+
+        .hero h1 {
+            font-size: 60px;
+            margin: 10px 0 30px;
+            line-height: 70px;
+            color: #fff;
+        }
+
+        .hero button {
+            color: #fbfcfd;
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .hero button:hover {
+            background: #ffcb05;
+            color: #000;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            padding: 4px 0;
+            text-align: center;
+            display: none; /* Initially hide the featured section */
+        }
+
+        .featured-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .carousel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 90%;
+        }
+
+        .carousel-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .carousel img:hover {
+            transform: scale(1.1);
+        }
+        .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-item:hover .description {
+            transform: translateY(0);
+        }
+
+        .description h3 {
+            margin-bottom: 10px;
+        }
+
+        .description p {
+            font-size: 14px;
+        }
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ffcb05;
+            margin: 0 5px;
+        }
+
+        /* Bubble Animation */
+        /* Bubble Animation */
+/* Bubble Animation */
+.bubbles {
+    width: 100%; /* Set to full width */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -68px; /* Positioned at the bottom of the body */
+    left: 0; /* Ensure it starts at the left edge */
+    pointer-events: none; /* Allow interaction with elements above */
+    z-index: 1; /* Ensure bubbles are behind content */
+}
+
+.bubbles img {
+    width: 50px;
+    animation: bubble 5s linear infinite; /* Ensure consistent bubble size */
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80vh);
+        opacity: 0;
+    }
+}
+
+/* Specific delay and size for each bubble */
+.bubbles img:nth-child(1) {
+    width: 30px;
+    animation-delay: 0s;
+}
+.bubbles img:nth-child(2) {
+    width: 26px;
+    animation-delay: 0s;
+}
+.bubbles img:nth-child(3) {
+    width: 20px;
+    animation-delay: 1s;
+}
+.bubbles img:nth-child(4) {
+    width: 18px;
+    animation-delay: 2s;
+}
+.bubbles img:nth-child(5) {
+    width: 20px;
+    animation-delay: 3.8s;
+}
+.bubbles img:nth-child(6) {
+    width: 20px;
+    animation-delay: 5.5s;
+}
+.bubbles img:nth-child(7) {
+    width: 19px;
+    animation-delay: 2s;
+}
+.bubbles img:nth-child(8) {
+    width: 18px;
+    animation-delay: 3s;
+}
+.bubbles img:nth-child(9) {
+    width: 30px;
+    animation-delay: 2s;
+}
+.bubbles img:nth-child(10) {
+    width: 19px;
+    animation-delay: 2s;
+}
+.bubbles img:nth-child(11) {
+    width: 20px;
+    animation-delay: 2s;
+}
+.bubbles img:nth-child(12) {
+    width: 30px;
+    animation-delay: 0s;
+}
+.bubbles img:nth-child(13) {
+    width: 26px;
+    animation-delay: 0s;
+}
+.bubbles img:nth-child(14) {
+    width: 20px;
+    animation-delay: 1s;
+}
+.bubbles img:nth-child(15) {
+    width: 18px;
+    animation-delay: 2s;
+}
+.bubbles img:nth-child(16) {
+    width: 20px;
+    animation-delay: 3.8s;
+}
+.bubbles img:nth-child(17) {
+    width: 20px;
+    animation-delay: 5.5s;
+}
+.bubbles img:nth-child(18) {
+    width: 19px;
+    animation-delay: 2s;
+}
+.bubbles img:nth-child(19) {
+    width: 18px;
+    animation-delay: 3.6s;
+}
+.bubbles img:nth-child(20) {
+    width: 20px;
+    animation-delay: 5.3s;
+}
+.bubbles img:nth-child(21) {
+    width: 11px;
+    animation-delay: 5s;
+}
+.bubbles img:nth-child(22) {
+    width: 11px;
+    animation-delay: 6s;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.search-input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    background: transparent;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.search-button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+a{
+    color: orange;  
+}
+.cta-button {
+    color: #fbfcfd;
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            outline: none;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s
+}
+.cta-button:hover{
+    background: #ffcb05;
+    color: #000;
+}
+       
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="logo (2).png" class="logo" alt="Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery2.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="artists.html">Artists</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <form class="search-form" action="javascript:void(0);" method="GET">
+            <input type="text" placeholder="Search artwork..." id="search-input" class="search-input">
+            <button type="submit" class="search-button" onclick="searchArtworks()">🔍</button>
+        </form>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="content">
+            <small>Welcome to the Virtual Art Gallery</small>
+            <h1>World's Creative Art Gallery</h1>
+            <button type="button" onclick="scrollToFeaturedArtworks()">Explore</button>
+        </div>
+    </div>
+
+    <!-- Bubbles Section -->
+    <div class="bubbles">
+        <img src="bubble.png" alt="Bubble 1">
+        <img src="bubble.png" alt="Bubble 2">
+        <img src="bubble.png" alt="Bubble 3">
+        <img src="bubble.png" alt="Bubble 4">
+        <img src="bubble.png" alt="Bubble 5">
+        <img src="bubble.png" alt="Bubble 6">
+        <img src="bubble.png" alt="Bubble 7">
+        <img src="bubble.png" alt="Bubble 8">
+        <img src="bubble.png" alt="Bubble 9">
+        <img src="bubble.png" alt="Bubble 10">
+        <img src="bubble.png" alt="Bubble 11">
+        <img src="bubble.png" alt="Bubble 12">
+        <img src="bubble.png" alt="Bubble 13">
+        <img src="bubble.png" alt="Bubble 14">
+        <img src="bubble.png" alt="Bubble 15">
+        <img src="bubble.png" alt="Bubble 16">
+        <img src="bubble.png" alt="Bubble 17">
+        <img src="bubble.png" alt="Bubble 18">
+        <img src="bubble.png" alt="Bubble 19">
+        <img src="bubble.png" alt="Bubble 20">
+        <img src="bubble.png" alt="Bubble 21">
+        <img src="bubble.png" alt="Bubble 22">
+    </div>
+
+    <!-- Featured Section -->
+    <div class="featured-section" id="featured-artworks">
+        <h2>Featured Artworks</h2>
+        <div class="carousel" id="artwork-list">
+            <div class="carousel-item" data-title="Abstract Art">
+                <img src="art1.jpg" alt="Abstract Art">
+                <div class="description">
+                    <h3>Abstract Art</h3>
+                    <p>A beautiful abstract piece showcasing vibrant colors and forms.</p>
+                    <a href="gallery.html">read more</a>
+                </div>
+            </div>
+            
+            <div class="carousel-item" data-title="Modern Art">
+                <img src="art2.jpg" alt="Modern Art">
+                <div class="description">
+                    <h3>Modern Art</h3>
+                    <p>A stunning representation of modern art and innovative design.</p>
+                    <a href="gallery.html">read more</a>
+                </div>
+            </div>
+    
+            <div class="carousel-item" data-title="Classical Art">
+                <img src="art3.jpeg" alt="Classical Art">
+                <div class="description">
+                    <h3>Classical Art</h3>
+                    <p>A timeless classic that brings the history of art to life.</p>
+                    <a href="gallery.html">read more</a>
+                </div>
+            </div>
+    
+            <div class="carousel-item" data-title="Impressionist Art">
+                <img src="art4.jpg" alt="Impressionist Art">
+                <div class="description">
+                    <h3>Impressionist Art</h3>
+                    <p>An impressionist masterpiece capturing the essence of light and nature.</p>
+                    <a href="gallery.html">read more</a>
+                </div>
+            </div>
+        </div>
+        <h2>Ready to Explore More?</h2>
+        <button class="cta-button" onclick="window.location.href='gallery.html'">Explore the Gallery</button>
+        <button class="cta-button" onclick="window.location.href='contact.html'">Contact Us</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Virtual Art Gallery. All rights reserved.</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        function scrollToFeaturedArtworks() {
+            // Scroll to the Featured Artworks section
+            document.getElementById('featured-artworks').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function searchArtworks() {
+            let searchQuery = document.getElementById('search-input').value.toLowerCase(); // Get user input
+            let artworks = document.querySelectorAll('.carousel-item'); // Get all artwork items
+            let noResultsMessage = document.getElementById('no-results-message'); // Element to display "No results found."
+
+            let found = false; // Flag to track if any result is found
+
+            // Loop through each artwork and hide/show based on search query
+            artworks.forEach(function(artwork) {
+                let title = artwork.getAttribute('data-title').toLowerCase(); // Get title of the artwork
+
+                if (title.includes(searchQuery)) {
+                    artwork.style.display = ''; // Show the artwork if it matches the search query
+                    found = true;
+                } else {
+                    artwork.style.display = 'none'; // Hide the artwork if it doesn't match
+                }
+            });
+
+            // Display "No results found" message if no matches are found
+            if (!found) {
+                if (!noResultsMessage) {
+                    let message = document.createElement('p');
+                    message.id = 'no-results-message';
+                    message.classList.add('no-results');
+                    message.textContent = 'No artworks found for your search.';
+                    document.querySelector('.featured-section').appendChild(message);
+                }
+            } else {
+                let message = document.getElementById('no-results-message');
+                if (message) {
+                    message.remove();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
